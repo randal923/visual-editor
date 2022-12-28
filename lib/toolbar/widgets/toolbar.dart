@@ -130,6 +130,9 @@ class EditorToolbar extends StatelessWidget implements PreferredSizeWidget {
     bool showDirection = false,
     Color? color,
 
+    // Custom Icons
+    IconData? boldIcon,
+
     // Disabled by default because most apps wont need such functionality.
     // Enable it only if your app requires the authors to define the markers themselves.
     // Markers can be added also programmatically via the controller.
@@ -234,7 +237,7 @@ class EditorToolbar extends StatelessWidget implements PreferredSizeWidget {
         if (showBoldButton)
           ToggleStyleButton(
             attribute: AttributesM.bold,
-            icon: Icons.format_bold,
+            icon: boldIcon ?? Icons.format_bold,
             buttonsSpacing: toolbarSectionSpacing,
             iconSize: toolbarIconSize,
             controller: controller,
